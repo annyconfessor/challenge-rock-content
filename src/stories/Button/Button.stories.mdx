@@ -1,0 +1,171 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+
+import { Row, Column, Button } from '../../components'
+
+<Meta title='Components/Button' />
+
+# Buttons
+
+Com o componente de `Button` é possível passar 3 tipos de `variants`: `contained`, `outlined`, `text`. Também pode-se passar os tipos de `color`: `primary`, `secondary` and `destruction`.
+
+<Canvas>
+  <Story
+    name='Button'
+    parameters={{
+      design: {
+        type: 'figma',
+        url: 'https://www.figma.com/file/NpAkGNSsdLbgJ8BzsNlXdM/Atlas-Design-System?node-id=718%3A2634'
+      }
+    }}
+  >
+    <Row>
+      <Column margin='20px'>
+        <Button color='primary' variant='contained' mb={20}>
+          Primary
+        </Button>
+        <Button color='secondary' variant='contained' mb={20}>
+          Secondary
+        </Button>
+        <Button color='destruction' variant='contained' mb={20}>
+          Destruction
+        </Button>
+        <Button disabled variant='contained'>
+          Disabled
+        </Button>
+      </Column>
+      <Column margin='20px'>
+        <Button color='primary' variant='outlined' mb={20}>
+          Primary
+        </Button>
+        <Button color='secondary' variant='outlined' mb={20}>
+          Secondary
+        </Button>
+        <Button color='destruction' variant='outlined' mb={20}>
+          Destruction
+        </Button>
+        <Button disabled variant='outlined'>
+          Disabled
+        </Button>
+      </Column>
+      <Column margin='20px'>
+        <Button color='primary' variant='text' mb={20}>
+          Primary
+        </Button>
+        <Button color='secondary' variant='text' mb={20}>
+          Secondary
+        </Button>
+        <Button color='destruction' variant='text' mb={20}>
+          Destruction
+        </Button>
+        <Button disabled variant='text'>
+          Disabled
+        </Button>
+      </Column>
+    </Row>
+  </Story>
+</Canvas>
+
+## Contained
+
+A variant `contained` tem background-color e hover definido para cada `color`.
+A prop color pode ser `primary`: green; `secondary`: gray e `destruction`: red.
+Mudando-se apenas a escala de cor entre cada propriedade.
+
+<Canvas>
+  <Story name='Contained'>
+    <Column alignItems='flex-start'>
+      <Button color='primary' variant='contained' mb={20}>
+        Primary
+      </Button>
+      <Button color='secondary' variant='contained' mb={20}>
+        Secondary
+      </Button>
+      <Button color='destruction' variant='contained'>
+        Destruction
+      </Button>
+    </Column>
+  </Story>
+</Canvas>
+
+## Outlined
+
+`Outlined` tem o mesmo padrão de Contained, porém com o background-color `transparent` quando não está aplicado o hover.
+
+<Canvas>
+  <Story name='Outlined'>
+    <Column alignItems='flex-start'>
+      <Button color='primary' variant='outlined' mb={20}>
+        Primary
+      </Button>
+      <Button color='secondary' variant='outlined' mb={20}>
+        Secondary
+      </Button>
+      <Button color='destruction' variant='outlined'>
+        Destruction
+      </Button>
+    </Column>
+  </Story>
+</Canvas>
+
+## Text
+
+Por fim, a variant `Text` também segue o mesmo padrão de variantes anteriores. Nessa prop também é possível passar `color` como `primary`, `secondary` e `destruction`.
+Porém, quando não aplicado estiver aplicado hover, seu background-color é 'transparent'. Mudando-se apenas para a color desejada quando estiver em hover.
+
+<Canvas>
+  <Story name='Text'>
+    <Column alignItems='flex-start'>
+      <Button color='primary' variant='text' mb={20}>
+        Primary
+      </Button>
+      <Button color='secondary' variant='text' mb={20}>
+        Secondary
+      </Button>
+      <Button color='destruction' variant='text'>
+        Destruction
+      </Button>
+    </Column>
+  </Story>
+</Canvas>
+
+# With Icons
+
+No Design system da Atlas temos que, além das variações e colors distintas, também temos as opções de buttons com/sem ícone, na direita e/ou esquerda.
+Com as props `leftIcon` e `rightIcon` é possível passar esses ícones.
+
+<Canvas>
+  <Story name='Icons'>
+    <Row>
+      <Column alignItems='flex-start' mr={40}>
+        <Button size='small' leftIcon='User' mb={20}>
+          Primary
+        </Button>
+        <Button size='medium' rightIcon='User' mb={20}>
+          Primary
+        </Button>
+        <Button size='large' leftIcon='User' rightIcon='User' mb={20}>
+          Primary
+        </Button>
+        <Button leftIcon='User' mb={20} />
+        <Button disabled leftIcon='User' mb={20}>
+          Disabled
+        </Button>
+      </Column>
+      <Column alignItems='flex-start' mr={40}>
+        <Button size='small' variant='outlined' leftIcon='User' mb={20}>
+          Primary
+        </Button>
+        <Button size='medium' variant='outlined' rightIcon='User' mb={20}>
+          Primary
+        </Button>
+        <Button variant='outlined' leftIcon='User' rightIcon='User' mb={20}>
+          Primary
+        </Button>
+        <Button variant='outlined' leftIcon='User' mb={20} />
+        <Button disabled variant='outlined' leftIcon='User' mb={20}>
+          Disabled
+        </Button>
+      </Column>
+    </Row>
+  </Story>
+</Canvas>
