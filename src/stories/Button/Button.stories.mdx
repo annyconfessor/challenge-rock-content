@@ -6,7 +6,7 @@ import { Row, Column, Button } from '../../components'
 
 # Buttons
 
-Com o componente de `Button` é possível passar 3 tipos de `variants`: `contained`, `outlined`, `text`. Também pode-se passar os tipos de `color`: `primary`, `secondary` and `destruction`.
+Com o componente de `Button` desenvolvido para esse challenge é possível passar 3 tipos de `variants`: `contained`, `outlined`, `text`. Também pode-se passar os tipos de `color`: `primary`, `secondary` and `destruction`.
 
 <Canvas>
   <Story
@@ -14,7 +14,6 @@ Com o componente de `Button` é possível passar 3 tipos de `variants`: `contain
     parameters={{
       design: {
         type: 'figma',
-        url: 'https://www.figma.com/file/NpAkGNSsdLbgJ8BzsNlXdM/Atlas-Design-System?node-id=718%3A2634'
       }
     }}
   >
@@ -68,7 +67,7 @@ Com o componente de `Button` é possível passar 3 tipos de `variants`: `contain
 ## Contained
 
 A variant `contained` tem background-color e hover definido para cada `color`.
-A prop color pode ser `primary`: green; `secondary`: gray e `destruction`: red.
+A prop color pode ser `primary`: blue; `secondary`: gray e `destruction`: red.
 Mudando-se apenas a escala de cor entre cada propriedade.
 
 <Canvas>
@@ -109,8 +108,8 @@ Mudando-se apenas a escala de cor entre cada propriedade.
 
 ## Text
 
-Por fim, a variant `Text` também segue o mesmo padrão de variantes anteriores. Nessa prop também é possível passar `color` como `primary`, `secondary` e `destruction`.
-Porém, quando não aplicado estiver aplicado hover, seu background-color é 'transparent'. Mudando-se apenas para a color desejada quando estiver em hover.
+Já a variant `Text` também segue o mesmo padrão de variantes anteriores. Nessa prop é possível passar `color` como `primary`, `secondary` e `destruction` também.
+Porém, quando não estiver aplicado hover, seu background-color é 'transparent'. Mudando-se apenas para a color desejada quando estiver em hover.
 
 <Canvas>
   <Story name='Text'>
@@ -128,22 +127,22 @@ Porém, quando não aplicado estiver aplicado hover, seu background-color é 'tr
   </Story>
 </Canvas>
 
-# With Icons
+# Size and Icons
 
-No Design system da Atlas temos que, além das variações e colors distintas, também temos as opções de buttons com/sem ícone, na direita e/ou esquerda.
-Com as props `leftIcon` e `rightIcon` é possível passar esses ícones.
+Também temos as opções de tamanho, com as props `size`: `small`, `medium` e `large`.
+Além das variações de cores e tamanhos distintas, também temos as opções de buttons com/sem ícone, na direita e/ou esquerda com as props `leftIcon` e `rightIcon`. 
 
 <Canvas>
-  <Story name='Icons'>
+  <Story name='Size and Icons'>
     <Row>
       <Column alignItems='flex-start' mr={40}>
-        <Button size='small' leftIcon='User' mb={20}>
+        <Button size='small' rightIcon='User' mb={20}>
           Primary
         </Button>
         <Button size='medium' rightIcon='User' mb={20}>
           Primary
         </Button>
-        <Button size='large' leftIcon='User' rightIcon='User' mb={20}>
+        <Button size='large' rightIcon='User' mb={20}>
           Primary
         </Button>
         <Button leftIcon='User' mb={20} />
@@ -152,13 +151,13 @@ Com as props `leftIcon` e `rightIcon` é possível passar esses ícones.
         </Button>
       </Column>
       <Column alignItems='flex-start' mr={40}>
-        <Button size='small' variant='outlined' leftIcon='User' mb={20}>
+        <Button size='small' variant='outlined' rightIcon='User' mb={20}>
           Primary
         </Button>
         <Button size='medium' variant='outlined' rightIcon='User' mb={20}>
           Primary
         </Button>
-        <Button variant='outlined' leftIcon='User' rightIcon='User' mb={20}>
+        <Button variant='outlined' rightIcon='User' mb={20}>
           Primary
         </Button>
         <Button variant='outlined' leftIcon='User' mb={20} />
@@ -169,3 +168,7 @@ Com as props `leftIcon` e `rightIcon` é possível passar esses ícones.
     </Row>
   </Story>
 </Canvas>
+
+O design desse challenge com o componente de Button é baseado em pesquisa de alguns designs systems.
+O desenvolvimento do componente foi feito com typescript, usando styled-components e styled-system. 
+É possível ver algumas modificações possíveis de estilo em https://styled-system.com/api/.

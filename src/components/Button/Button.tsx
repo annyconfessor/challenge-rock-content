@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react'
+import React, { FC, useMemo, useState } from 'react'
 import styled, { css } from 'styled-components'
 import {
   variant,
@@ -114,6 +114,7 @@ const StyledButton = styled.button<Omit<ButtonProps, 'color'>>`
 `
 
 const Button: FC<ButtonProps> = (props) => {
+  const [ count, setCount ] = useState(0)
   const { variant = 'contained', color = 'primary', size = 'large', leftIcon, rightIcon, disabled, ...rest } = props
 
   const buttonColors = {
@@ -136,9 +137,16 @@ const Button: FC<ButtonProps> = (props) => {
   }, [size])
 
   return (
-    <StyledButton variant={variant} color={buttonColors[color]} size={size} disabled={disabled} {...rest}>
+    <StyledButton 
+      variant={variant} 
+      color={buttonColors[color]} 
+      size={size} 
+      disabled={disabled} 
+      onClick={()=>setCount(count+1)}
+      {...rest}
+    >
       {leftIcon && <Icon name={leftIcon} size={iconSize} pr={props.children ? '10px' : 0} color={iconColor}></Icon>}
-      {props.children}
+      {props.children ? disabled ? `${props.children}` : `+${count} ${props.children}` : null}
       {rightIcon && <Icon name={rightIcon} size={iconSize} pl={props.children ? '10px' : 0} color={iconColor}></Icon>}
     </StyledButton>
   )

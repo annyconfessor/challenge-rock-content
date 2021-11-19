@@ -7,10 +7,10 @@ const pallete = {
       dark: '#16A086'
     },
     blue: {
-      default: '#2196F3',
-      transparency: '#CFE7FD',
+      default: '#4166AF',
+      transparency: '#b8cde0',
       light: '#64B5F6',
-      dark: '#1976D2'
+      dark: '#395387'
     },
     red: {
       default: '#DF3A45',
