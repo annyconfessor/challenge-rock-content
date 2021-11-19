@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "@types/styled-components": "^5.1.15",
     "@types/styled-system": "^5.1.13",
+    "netlify-cli": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -20,7 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "chromatic": "npx chromatic --project-token=f6e2d92b49a0"
   },
   "eslintConfig": {
     "extends": [
@@ -59,9 +61,13 @@
     "@storybook/react": "^6.3.12",
     "@types/react": "^17.0.35",
     "@types/react-helmet": "^6.1.4",
+    "chromatic": "^6.0.6",
     "react-helmet": "^6.1.0",
     "storybook": "^6.3.12",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
+  },
+  "optionalDependencies": {
+    "babel-loader": "8.1.0"
   }
 }
